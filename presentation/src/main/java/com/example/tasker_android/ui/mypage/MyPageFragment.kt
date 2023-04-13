@@ -6,14 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.tasker_android.R
+import com.example.tasker_android.base.BaseFragment
+import com.example.tasker_android.databinding.FragmentMyPageBinding
 
-class MyPageFragment : Fragment() {
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_page, container, false)
+class MyPageFragment : BaseFragment<FragmentMyPageBinding>() {
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+    ): FragmentMyPageBinding {
+        return FragmentMyPageBinding.inflate(inflater, container, false)
     }
+
+
 }
