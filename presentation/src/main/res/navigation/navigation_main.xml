@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/nav_main_home">
+
+    <fragment
+        android:id="@+id/nav_main_home"
+        android:name="com.example.tasker_android.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_main_collection"
+        android:name="com.example.tasker_android.ui.collection.CollectionFragment"
+        android:label="fragment_collection"
+        tools:layout="@layout/fragment_collection" />
+
+    <fragment
+        android:id="@+id/nav_main_taskbook"
+        android:name="com.example.tasker_android.ui.taskbook.TaskBookFragment"
+        android:label="fragment_task_book"
+        tools:layout="@layout/fragment_task_book" />
+
+    <fragment
+        android:id="@+id/nav_main_mypage"
+        android:name="com.example.tasker_android.ui.mypage.MyPageFragment"
+        android:label="fragment_my_page"
+        tools:layout="@layout/fragment_my_page" />
+</navigation>
