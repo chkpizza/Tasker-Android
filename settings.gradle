@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Tasker-Android"
 include ':presentation'
+include ':domain'
+include ':data'

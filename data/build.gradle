@@ -1,20 +1,18 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    namespace 'com.example.tasker_android'
+    namespace 'com.antique.data'
     compileSdk Versions.compileSdk
 
     defaultConfig {
-        applicationId "com.example.tasker_android"
         minSdk Versions.minSdk
         targetSdk Versions.targetSdk
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -30,30 +28,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-
-    buildFeatures{
-        viewBinding true
-    }
 }
 
 dependencies {
     implementation project(":domain")
-    implementation project(":data")
 
     implementation(AndroidX.CORE)
     implementation(AndroidX.APP_COMPAT)
     implementation(Google.MATERIAL)
-    implementation(AndroidX.CONSTRAINT_LAYOUT)
     testImplementation(AndroidTest.JUNIT4)
     androidTestImplementation(AndroidTest.EXT_JUNIT)
     androidTestImplementation(AndroidTest.ESPRESSO_CORE)
-
-    implementation(AndroidX.FRAGMENT)
-    implementation(AndroidX.ACTIVITY)
-
-    implementation(AndroidX.NAVIGATION_FRAGMENT)
-    implementation(AndroidX.NAVIGATION_UI)
-
-    // Feature module Support
-//    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.5.3")
 }
