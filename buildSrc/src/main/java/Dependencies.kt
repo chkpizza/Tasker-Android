@@ -4,6 +4,7 @@ object AndroidX {
     const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:2.1.4"
     const val FRAGMENT = "androidx.fragment:fragment-ktx:1.5.6"
     const val ACTIVITY = "androidx.activity:activity-ktx:1.7.0"
+    const val NAVIGATION_RUNTIME = "androidx.navigation:navigation-runtime-ktx:2.5.3"
     const val NAVIGATION_FRAGMENT = "androidx.navigation:navigation-fragment-ktx:2.5.3"
     const val NAVIGATION_UI = "androidx.navigation:navigation-ui-ktx:2.5.3"
 }

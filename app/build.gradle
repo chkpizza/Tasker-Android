@@ -54,6 +54,7 @@ dependencies {
     implementation(AndroidX.FRAGMENT)
     implementation(AndroidX.ACTIVITY)
 
+    implementation(AndroidX.NAVIGATION_RUNTIME)
     implementation(AndroidX.NAVIGATION_FRAGMENT)
     implementation(AndroidX.NAVIGATION_UI)
 
