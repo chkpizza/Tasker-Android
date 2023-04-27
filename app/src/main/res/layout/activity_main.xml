@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".view.MainActivity">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fcv_main"
@@ -26,6 +26,9 @@
             android:id="@+id/bnv_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:labelVisibilityMode="labeled"
+            app:itemIconTint="@drawable/bottom_nav_selector"
+            app:itemTextColor="@drawable/bottom_nav_selector"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/menu_nav_bar_main" />
 
