@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/nav_main_home"
+        android:id="@+id/home_nav_graph"
         android:title="@string/home" />
 
     <item
-        android:id="@+id/nav_main_collection"
+        android:id="@+id/collection_nav_graph"
         android:title="@string/collection" />
 
     <item
-        android:id="@+id/nav_main_taskbook"
+        android:id="@+id/taskbook_nav_graph"
         android:title="@string/taskbook" />
 
     <item
-        android:id="@+id/nav_main_mypage"
+        android:id="@+id/mypage_nav_graph"
         android:title="@string/mypage" />
 
 </menu>
