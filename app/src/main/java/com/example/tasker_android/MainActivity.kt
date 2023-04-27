@@ -19,43 +19,5 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val bottomNavView = binding.bnvMain
-
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.fcv_main)
-        val navController = navHostFragment?.findNavController() ?: throw NullPointerException()
-
-        appBarConfig = AppBarConfiguration(
-            setOf(
-                R.id.nav_main_home,
-                R.id.nav_main_collection,
-                R.id.nav_main_taskbook,
-                R.id.nav_main_mypage
-            )
-        )
-
-        bottomNavView.setupWithNavController(navController)
-
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.nav_main_home -> {
-
-                }
-                R.id.nav_main_collection -> {
-
-                }
-                R.id.nav_main_taskbook -> {
-
-                }
-                R.id.nav_main_mypage -> {
-
-                }
-            }
-        }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.fcv_main)
-        return navController.navigateUp(appBarConfig) || super.onSupportNavigateUp()
     }
 }
