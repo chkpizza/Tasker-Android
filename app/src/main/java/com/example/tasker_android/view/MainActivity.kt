@@ -33,7 +33,8 @@ class MainActivity : AppCompatActivity() {
             binding.root.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
                     View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
                     View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-        }    }
+        }
+    }
 
     private fun setupNavigation() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fcv_main) as NavHostFragment

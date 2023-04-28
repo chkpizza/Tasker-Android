@@ -18,3 +18,8 @@ object AndroidTest {
     const val EXT_JUNIT = "androidx.test.ext:junit:1.1.5"
     const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:3.5.1"
 }
+
+object ThirdParty {
+    const val GLIDE = "com.github.bumptech.glide:glide:4.14.2"
+    const val GLIDE_COMPILER = "com.github.bumptech.glide:compiler:4.14.2"
+}
