@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -10,18 +10,150 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.view.onboarding.PhoneAuthFragment">
+        tools:context=".presentation.view.auth.PhoneAuthFragment">
 
-        <!-- TODO: Update blank fragment layout -->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_auth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="et_auth_code, tv_timer, btn_agree_start" />
+
+        <ImageView
+            android:id="@+id/iv_navigation_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_navigation_back" />
+
         <TextView
+            android:id="@+id/tv_phone_auth_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="20sp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="안녕하세요!\n휴대폰 번호로 가입해주세요."
             android:textColor="@color/black"
-            android:text="안녕하세요!\n휴대폰 번호로 가입해주세요." />
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_navigation_back" />
 
+        <EditText
+            android:id="@+id/et_phone_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_rectangle_radius_10_stroke_gray100"
+            android:fontFamily="@font/pretendard_regular"
+            android:hint="휴대폰 번호를 입력해주세요"
+            android:maxLength="11"
+            android:inputType="phone"
+            android:maxLines="1"
+            android:paddingStart="14dp"
+            android:paddingTop="17dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="17dp"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_phone_auth_title" />
+
+        <TextView
+            android:id="@+id/tv_length_alert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:text="*11자리 모두 입력해주세요."
+            android:textColor="@color/red_f8"
+            android:textSize="11sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/et_phone_number"
+            app:layout_constraintTop_toBottomOf="@id/et_phone_number" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_code_request"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_rectangle_radius_10_solid_gray100"
+            android:fontFamily="@font/pretendard_semibold"
+            android:gravity="center"
+            android:paddingTop="14dp"
+            android:paddingBottom="13dp"
+            android:text="인증번호 받기"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_length_alert" />
+
+        <EditText
+            android:id="@+id/et_auth_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_regular"
+            android:background="@drawable/shape_rectangle_radius_10_stroke_gray100"
+            android:maxLines="1"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:paddingTop="17dp"
+            android:textSize="13sp"
+            android:paddingBottom="17dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="인증번호 6자리를 입력해주세요.(1분 이내)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_code_request" />
+
+        <TextView
+            android:id="@+id/tv_failure_auth_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/et_auth_code"
+            app:layout_constraintStart_toStartOf="@id/et_auth_code"
+            android:textSize="11sp"
+            android:textColor="@color/red_f8"
+            android:text="*인증번호를 다시 입력해주세요."/>
+
+        <TextView
+            android:id="@+id/tv_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/et_auth_code"
+            app:layout_constraintBottom_toBottomOf="@id/et_auth_code"
+            app:layout_constraintEnd_toEndOf="@id/et_auth_code"
+            android:layout_marginEnd="9dp"
+            android:textSize="12sp"
+            android:fontFamily="@font/pretendard_regular"
+            android:textColor="@color/red_d0"
+            android:text="02:49"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_agree_start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="동의하고 시작하기"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:fontFamily="@font/pretendard_semibold"
+            android:paddingTop="15dp"
+            android:paddingBottom="16dp"
+            android:background="@drawable/shape_rectangle_solid_gray100"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

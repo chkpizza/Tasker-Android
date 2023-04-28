@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.antique.login.R
 import com.antique.login.databinding.FragmentOnBoardingBinding
@@ -31,6 +32,7 @@ class OnBoardingFragment : Fragment() {
 
     private fun initialize() {
         setupViewPager()
+        setupViewListener()
     }
 
     private fun setupViewPager() {
@@ -58,6 +60,12 @@ class OnBoardingFragment : Fragment() {
                 }
             }
         })
+    }
+
+    private fun setupViewListener() {
+        binding.btnAuthStart.setOnClickListener {
+            findNavController().navigate(R.id.action_onBoardingFragment_to_phoneAuthFragment)
+        }
     }
 
     override fun onDestroyView() {

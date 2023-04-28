@@ -9,5 +9,13 @@
         android:id="@+id/onBoardingFragment"
         android:name="com.antique.login.presentation.view.onboarding.OnBoardingFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_on_boarding" />
+        tools:layout="@layout/fragment_on_boarding" >
+        <action
+            android:id="@+id/action_onBoardingFragment_to_phoneAuthFragment"
+            app:destination="@id/phoneAuthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/phoneAuthFragment"
+        android:name="com.antique.login.presentation.view.auth.PhoneAuthFragment"
+        android:label="PhoneAuthFragment" />
 </navigation>
